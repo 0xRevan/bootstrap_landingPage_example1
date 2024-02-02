@@ -6,23 +6,41 @@
     text-shadow: none;
 }
 
-/*
- * Base structure
- */
+/* Base structure */
 body {
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+    /* box-shadow: none 0 0 5rem rgba(0, 0, 0, .5); */
 }
 
 .cover-container {
     max-width: 42em;
 }
 
-/*
- * Header
- */
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: auto;
+    padding: 1rem; /* Adjusted padding */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+}
+
+.header img {
+    width: 85px;
+    height: auto;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.header .nav-masthead {
+    display: flex;
+    align-items: center; /* This ensures nav links are aligned with the image */
+    gap: 20px; /* Adjust gap between nav links */
+}
+
 .banner-wrap {
-    background-image: url("https://images.unsplash.com/photo-1610689096391-801034c438fc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-image: url("./assets/jedi_holocrons_banner.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -33,92 +51,78 @@ body {
 }
 
 .overlay {
-    /* sending the overlay element to the back w/opacity */
     z-index: -1;
     height: 100%;
     width: 100%;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.45);
     position: absolute;
-    opacity: 45%;
+    opacity: 0.7;
 }
 
-.lightsaber-image {
-    width: 150px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 5px; /* Add spacing between the image and "My Brand" */
-}
-
-/* Style for the navigation links */
+/* Navigation links */
 .navbar-nav .nav-link {
     font-weight: bold;
-    padding: 5px 15px; /* Adjust padding as needed */
+    padding: 5px 5px;
 }
 
-/* Style for the active link */
 .navbar-nav .nav-link.active {
-    background-color: #fff; /* Change to the desired active link background color */
-    color: #007bff; /* Change to the desired active link text color */
+    background-color: #fff;
+    color: #007bff;
 }
 
-/* Additional styles for masthead navigation links (noted conflicts) */
+nav.nav-masthead {
+position: relative;
+z-index: 2;
+
+}
+
+/* Additional styles for masthead navigation links */
 .nav-masthead .nav-link {
-    color: rgba(255, 255, 255, .5);
-    border-bottom: .25rem solid transparent;
+    color: rgba(255, 255, 255, 0.75); /* Lighter text for better readability */
+    margin-left: 1rem; /* Reduced margin for closer links */
+    padding: 0.5rem 1rem; /* Adjusted padding for more space inside */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition for hover effects */
 }
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-    border-bottom-color: rgba(255, 255, 255, .25);
-}
-
-.nav-masthead .nav-link + .nav-link {
-    margin-left: 5rem;
+    color: #FFD700; /* Gold color on hover/focus for contrast */
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background highlight */
+    border-bottom-color: transparent; /* Remove border-bottom on hover/focus */
 }
 
 .nav-masthead .active {
-    color: #fff;
-    border-bottom-color: #fff;
+    color: #FFFFFF; /* Brighter white for active link */
+    border-bottom-color: #FFD700; /* Gold underline for active link */
 }
 
-#quote-container {
-  background-color: rgba(0, 0, 0, 0.7);
-  margin-top: 10px;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 10%;
-  /* Add more styles as needed */
+/* Quote container styles */
+/* Grid for quotes */
+#quoteGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust column width */
+  gap: 20px; /* Spacing between grid items */
+  padding: 20px; /* Padding around the grid */
 }
 
-#quote-container p {
-  font-size: 24px;
-  color: white;
-  /* Add more styles as needed */
+/* Footer */
+.footer {
+    font-size: 1rem;
+    z-index: 1;
 }
 
-#quote-container .blockquote-footer {
-  font-size: 18px;
-  color: #ccc;
-  /* Add more styles as needed */
+.footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.carousel-item blockquote {
-  font-size: 1.2em;
-  /* Add more styles as needed */
+@media (max-width: 768px) {
+    .nav-masthead .nav-link {
+        margin-left: 0.5rem; /* Less spacing on smaller screens */
+    }
+    .header {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
 }
-
-.carousel-item footer {
-  font-size: 1em;
-  /* Add more styles as needed */
-}
-
-
-#page-footer {
-    position: absolute;
-    bottom: 35px;
-    left: 5px;
-    width: 40%;
-}
-

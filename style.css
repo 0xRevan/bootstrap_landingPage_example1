@@ -1,0 +1,135 @@
+:root {
+    --primary-color: #343a40; /* Dark shade */
+    --accent-color: #ffd700; /* Gold */
+    --light-bg: #f8f9fa; /* Light background */
+    --dark-text: #212529; /* Dark text color */
+    --light-text: #ffffff; /* Light text color */
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+}
+
+.site-header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-header img {
+height: 50px;
+padding: 2px;
+}
+
+/* Logo */
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align the child elements */
+    margin: 0 10px; /* Add some spacing between each logo container */
+}
+
+.logo {
+    width: auto; /* Adjust based on your preference */
+    height: auto;
+    margin-bottom: 8px; /* Space between the image and the caption */
+}
+
+.logo-caption {
+    display: block; /* Make the anchor fill the container width */
+    text-align: center; /* Center the text */
+    color: white; /* Adjust the color based on your theme */
+    text-decoration: none; /* Remove the underline from links */
+    font-weight: bold; /* Optional: Makes the caption text bold */
+}
+
+/* Banner Image */
+
+.banner-wrap {
+    background-image: url("./assets/jedi_holocrons_banner.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    border-bottom: 8px solid #222;
+    position: relative;
+    z-index: 1;
+}
+
+.overlay {
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+    position: absolute;
+    opacity: 0.7;
+}
+
+.site-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.site-nav li {
+    margin-left: 20px;
+}
+
+.site-nav a {
+    color: var(--light-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-nav a:hover {
+    color: var(--accent-color);
+}
+
+.featured-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--dark-text);
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: darken(var(--accent-color), 10%);
+}
+
+.site-footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .site-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .site-nav li {
+        margin: 10px 0;
+    }
+}
